@@ -1,7 +1,17 @@
 <launch>
 
   <!-- load the controllers -->
-  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+  <node name="left_controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+	output="screen" ns="/baxter" args="--namespace=/baxter
+					  left_s0_position_controller
+					  left_s1_position_controller
+					  left_e0_position_controller
+					  left_e1_position_controller
+					  left_w0_position_controller
+					  left_w1_position_controller
+					  left_w2_position_controller" />
+
+  <node name="right_controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
 	output="screen" ns="/baxter" args="--namespace=/baxter
 					  right_s0_position_controller
 					  right_s1_position_controller

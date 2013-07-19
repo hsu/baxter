@@ -159,7 +159,7 @@ void BaxterGripperController::update(const ros::Time& time, const ros::Duration&
   // Set the PID error and compute the PID command with nonuniform
   // time step size. This also allows the user to pass in a precomputed derivative error.
   double commanded_effort = pid_controller_->computeCommand(error, vel_error, period);
-  ROS_INFOy_STREAM_NAMED("update","commanded effort = " << error);
+  ROS_INFO_STREAM_NAMED("update","commanded effort = " << error);
   joint_.setCommand(commanded_effort);
 
 
